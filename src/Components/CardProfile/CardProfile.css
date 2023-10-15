@@ -1,0 +1,41 @@
+
+.container-card{
+    display: flex;
+    height: 250px;
+    width: 600px;
+    background-color:#fff;
+    overflow: hidden;
+    box-shadow: 0 5px 10px #011114c0;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+  
+  .container-card:hover{
+    transform: scale(1.1);
+    transition: all .3s;
+  }
+  .img-card{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  height: 100%;
+  overflow: hidden;
+  }
+  
+  .img-card img{
+    height:100%;
+    width:95%;
+    border-radius: 10px;
+  }
+  
+  .content-card{
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+  }
+  
+  .content-city{
+    border: solid 1px rgba(0, 0, 0, 0.548);
+    text-align: center;
+  }

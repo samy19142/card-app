@@ -1,24 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import CardProfile from "./Components/CardProfile/CardProfile";
+import useFetch from "./Hooks/useFetch";
 
 function App() {
+  const { result, loading, error } = useFetch(
+    `https://jsonplaceholder.typicode.com/users`
+  );
+
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="container mb-5">
+      <div className="row">
+      <h1>Equipo de Profesionales</h1>
+      </div>
+
+      </div>
+
+      <div className="container">
+        <div className="row">
+
+          {!result ? (
+            <>
+              <div className="text-center">
+                <div className="spinner-border" role="status">
+                  <span className="visually-hidden">Loading...</span>
+                </div>
+              </div>
+            </>
+          ) : (
+            <>
+            {result.map((item, index)=>(
+
+            <CardProfile item={item} key={index} imgRandom={'https://source.unsplash.com/random/?people'}/>
+            ))}
+            </>
+          )}
+
+        </div>
+      </div>
+    </>
   );
 }
 
