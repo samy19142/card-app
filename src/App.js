@@ -20,7 +20,7 @@ function App() {
       <div className="container">
         <div className="row">
 
-          {!result ? (
+          {!result|loading ? (
             <>
               <div className="text-center">
                 <div className="spinner-border" role="status">
@@ -32,7 +32,7 @@ function App() {
             <>
             {result.map((item, index)=>(
 
-            <CardProfile item={item} key={index} imgRandom={'https://source.unsplash.com/random/?people'}/>
+            <CardProfile item={item} key={index}/>
             ))}
             </>
           )}
